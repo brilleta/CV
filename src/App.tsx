@@ -37,13 +37,10 @@ function App() {
 
   return (
     <>
-      <div
-        id="cv-to-print"
-        className="w-[210mm] min-h-[297mm] bg-white text-black mx-auto relative"
-      >
+      <div className="w-[210mm] min-h-[297mm] bg-white text-black mx-auto relative">
         <div className="w-full h-full absolute top-0 left-0">
           <Dither
-            waveColor={[0.5, 0.5, 0.5]}
+            waveColor={[0.2, 0.2, 0.2]}
             disableAnimation={false}
             enableMouseInteraction={false}
             mouseRadius={0.3}
