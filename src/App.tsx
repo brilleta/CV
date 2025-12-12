@@ -178,7 +178,7 @@ function App() {
         />
       </div>
       <Button className="fixed bottom-4 right-4" onClick={downloadPDF}>
-        Télécharger PDF
+        Imprimer
       </Button>
     </>
   );
