@@ -37,7 +37,10 @@ function App() {
 
   return (
     <>
-      <div className="w-[210mm] min-h-[297mm] bg-white text-black mx-auto relative">
+      <div
+        id="cv-to-print"
+        className="w-[210mm] min-h-[297mm] bg-white text-black mx-auto relative"
+      >
         <div className="w-full h-full absolute top-0 left-0">
           <Dither
             waveColor={[0.2, 0.2, 0.2]}
@@ -53,7 +56,7 @@ function App() {
         <CV
           firstname="Aurélien"
           lastname="Brillet"
-          photo={"/photo_cv.png"}
+          photo={"/CV/photo_cv.png"}
           title="Développeur Python IA et Fullstack Web"
           email="aurelien.brillet04@gmail.com"
           phone="+33 6 95 15 92 52"
