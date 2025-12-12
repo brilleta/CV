@@ -4,7 +4,7 @@ Une application web moderne pour générer et exporter un CV au format PDF.
 
 ## 📝 Description
 
-Ce projet est une application React/TypeScript permettant de créer un CV interactif et élégant avec un design moderne utilisant des effets visuels (Silk shader). Le CV est entièrement personnalisable via des props React et peut être exporté en PDF.
+Ce projet est une application React/TypeScript permettant de créer un CV interactif et élégant avec un design moderne utilisant des effets visuels ([Dither shader](https://reactbits.dev/backgrounds/dither)). Le CV est entièrement personnalisable via des props React et peut être exporté en PDF.
 
 ## ✨ Fonctionnalités
 

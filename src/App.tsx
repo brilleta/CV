@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import "./App.css";
 import CV from "./components/CV";
-import Silk from "./components/Silk";
+import Dither from "./components/Dither";
 import { Button } from "./components/ui/button";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
           print-color-adjust: exact !important;
         }
         #cv-to-print {
-          background-color: #667eea !important;
+          background-color: #000000 !important;
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
         }
@@ -36,12 +36,15 @@ function App() {
     <>
       <div className="w-[210mm] min-h-[297mm] bg-white text-black mx-auto relative">
         <div className="w-full h-full absolute top-0 left-0">
-          <Silk
-            speed={5}
-            scale={1}
-            color="#1100faff"
-            noiseIntensity={1.5}
-            rotation={0}
+          <Dither
+            waveColor={[0.5, 0.5, 0.5]}
+            disableAnimation={false}
+            enableMouseInteraction={false}
+            mouseRadius={0.3}
+            colorNum={4}
+            waveAmplitude={0.3}
+            waveFrequency={3}
+            waveSpeed={0.05}
           />
         </div>
         <CV
