@@ -17,15 +17,32 @@ interface CVHeaderProps {
 interface ContactItemProps {
   icon: typeof Mail;
   text: string;
+  href?: string;
 }
 
-const ContactItem = ({ icon: Icon, text }: ContactItemProps) => (
-  <div className="flex items-center gap-1">
-    <Icon className="w-3 h-3 text-white" />
-    <WhiteText as="span" className="font-medium">
-      {text}
-    </WhiteText>
-  </div>
+const ContactItem = ({ icon: Icon, text, href }: ContactItemProps) => (
+  <>
+    {href ? (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1"
+      >
+        <Icon className="w-3 h-3 text-white" />
+        <WhiteText as="span" className="font-medium">
+          {text}
+        </WhiteText>
+      </a>
+    ) : (
+      <div className="flex items-center gap-1">
+        <Icon className="w-3 h-3 text-white" />
+        <WhiteText as="span" className="font-medium">
+          {text}
+        </WhiteText>
+      </div>
+    )}
+  </>
 );
 
 export const CVHeader = ({
@@ -64,8 +81,16 @@ export const CVHeader = ({
           <ContactItem icon={Mail} text={email} />
           <ContactItem icon={Phone} text={phone} />
           <ContactItem icon={MapPin} text={address} />
-          <ContactItem icon={Linkedin} text={linkedin} />
-          <ContactItem icon={Github} text={github} />
+          <ContactItem
+            icon={Linkedin}
+            text={linkedin.replace("https://www.", "")}
+            href={linkedin}
+          />
+          <ContactItem
+            icon={Github}
+            text={github.replace("https://www.", "")}
+            href={github}
+          />
         </div>
       </div>
     </GlassCard>

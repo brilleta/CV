@@ -56,8 +56,8 @@ function App() {
           email="aurelien.brillet04@gmail.com"
           phone="+33 6 95 15 92 52"
           address="16 rue de l'Autour, 59800 Lille, France"
-          linkedin="linkedin.com/in/aurélien-brillet-586262171"
-          github="github.com/brilleta"
+          linkedin="https://www.linkedin.com/in/aurélien-brillet-586262171"
+          github="https://www.github.com/brilleta"
           diplomas={[
             {
               diploma: "Licence professionnelle DA2I",
