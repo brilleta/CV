@@ -10,7 +10,6 @@ import { SectionHeader } from "./SectionHeader";
 import { Badge } from "./ui/badge";
 
 interface CVProps {
-  ref: React.RefObject<HTMLDivElement>;
   photo: string;
   firstname: string;
   lastname: string;
@@ -43,7 +42,6 @@ interface CVProps {
 }
 
 const CV = ({
-  ref,
   photo,
   firstname,
   lastname,
@@ -59,11 +57,7 @@ const CV = ({
   hobbies = [],
 }: CVProps) => {
   return (
-    <div
-      ref={ref}
-      id="cv-to-print"
-      className="w-[210mm] h-[297mm] text-gray-900 mx-auto shadow-2xl overflow-hidden"
-    >
+    <div className="w-[210mm] h-[297mm] text-gray-900 mx-auto shadow-2xl overflow-hidden">
       <CVHeader
         photo={photo}
         firstname={firstname}

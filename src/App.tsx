@@ -1,40 +1,46 @@
-import { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
+import { toPng } from "html-to-image";
+import jsPDF from "jspdf";
+import { useCallback } from "react";
 import "./App.css";
 import CV from "./components/CV";
 import Dither from "./components/Dither";
 import { Button } from "./components/ui/button";
 
 function App() {
-  const cvRef = useRef<HTMLDivElement>(null!);
+  const downloadPDF = useCallback(async () => {
+    const element = document.getElementById("cv-to-print");
+    if (!element) return;
 
-  const printCV = useReactToPrint({
-    contentRef: cvRef,
-    documentTitle: "CV",
-    pageStyle: `
-      @page {
-        margin: 0;
-        size: A4;
-      }
-      @media print {
-        body {
-          margin: 0;
-          padding: 0;
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
-        }
-        #cv-to-print {
-          background-color: #000000 !important;
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
-        }
-      }
-    `,
-  });
+    try {
+      const dataUrl = await toPng(element, {
+        quality: 1,
+        pixelRatio: 2,
+        backgroundColor: "#000000",
+      });
+
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4",
+      });
+
+      const pdfWidth = 210;
+      const pdfHeight = 297;
+
+      pdf.addImage(dataUrl, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+      pdf.save("CV_Aurelien_Brillet.pdf");
+    } catch (error) {
+      console.error("Erreur lors de la génération du PDF:", error);
+    }
+  }, []);
 
   return (
     <>
-      <div className="w-[210mm] min-h-[297mm] bg-white text-black mx-auto relative">
+      <div
+        id="cv-to-print"
+        className="w-[210mm] min-h-[297mm] bg-white text-black mx-auto relative"
+      >
         <div className="w-full h-full absolute top-0 left-0">
           <Dither
             waveColor={[0.5, 0.5, 0.5]}
@@ -48,7 +54,6 @@ function App() {
           />
         </div>
         <CV
-          ref={cvRef}
           firstname="Aurélien"
           lastname="Brillet"
           photo={"/photo_cv.png"}
@@ -175,7 +180,7 @@ function App() {
           ]}
         />
       </div>
-      <Button className="fixed bottom-4 right-4" onClick={printCV}>
+      <Button className="fixed bottom-4 right-4" onClick={downloadPDF}>
         Télécharger PDF
       </Button>
     </>
