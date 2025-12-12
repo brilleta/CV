@@ -30,7 +30,7 @@ Ce projet est une application React/TypeScript permettant de créer un CV intera
 
 ## 🚀 Installation
 
-\`\`\`bash
+```bash
 # Cloner le repository
 git clone <url-du-repo>
 
@@ -39,20 +39,20 @@ pnpm install
 
 # Lancer le serveur de développement
 pnpm dev
-\`\`\`
+```
 
 ## 📦 Scripts disponibles
 
-\`\`\`bash
+```bash
 pnpm dev       # Lance le serveur de développement
 pnpm build     # Compile le projet pour la production
 pnpm preview   # Prévisualise la version de production
 pnpm lint      # Vérifie le code avec ESLint
-\`\`\`
+```
 
 ## 📄 Structure du projet
 
-\`\`\`
+```
 src/
 ├── components/
 │   ├── CV.tsx                  # Composant principal du CV
@@ -66,13 +66,13 @@ src/
 ├── utils/
 │   └── iconMapping.tsx         # Mapping des icônes
 └── App.tsx                     # Point d'entrée de l'application
-\`\`\`
+```
 
 ## 🎨 Personnalisation
 
 Pour personnaliser le CV, modifiez les props passées au composant `<CV />` dans `App.tsx` :
 
-\`\`\`tsx
+```tsx
 <CV
   firstname="Votre prénom"
   lastname="Votre nom"
@@ -90,7 +90,7 @@ Pour personnaliser le CV, modifiez les props passées au composant `<CV />` dans
   }}
   hobbies={[...]}
 />
-\`\`\`
+```
 
 ## 📸 Export PDF
 
