@@ -53,7 +53,7 @@ function App() {
         <CV
           firstname="Aurélien"
           lastname="Brillet"
-          photo={"/photo_cv.png"}
+          photo={"/cv/photo_cv.png"}
           title="Développeur Python IA et Fullstack Web"
           email="aurelien.brillet04@gmail.com"
           phone="+33 6 95 15 92 52"
