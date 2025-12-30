@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { GlassCard } from "./GlassCard";
 import { WhiteText } from "./WhiteText";
 
@@ -8,7 +8,6 @@ interface CVHeaderProps {
   lastname: string;
   title: string;
   email: string;
-  phone: string;
   address: string;
   linkedin: string;
   github: string;
@@ -51,7 +50,6 @@ export const CVHeader = ({
   lastname,
   title,
   email,
-  phone,
   address,
   linkedin,
   github,
@@ -79,7 +77,6 @@ export const CVHeader = ({
         </WhiteText>
         <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 w-full text-xs text-white">
           <ContactItem icon={Mail} text={email} />
-          <ContactItem icon={Phone} text={phone} />
           <ContactItem icon={MapPin} text={address} />
           <ContactItem
             icon={Linkedin}

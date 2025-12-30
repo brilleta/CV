@@ -59,7 +59,6 @@ function App() {
           photo={"/CV/photo_cv.png"}
           title="Développeur Python IA et Fullstack Web"
           email="aurelien.brillet04@gmail.com"
-          phone="+33 6 95 15 92 52"
           address="16 rue de l'Autour, 59800 Lille, France"
           linkedin="https://www.linkedin.com/in/aurélien-brillet-586262171"
           github="https://www.github.com/brilleta"

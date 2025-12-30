@@ -47,7 +47,6 @@ const CV = ({
   lastname,
   title,
   email = "email@example.com",
-  phone = "+33 6 00 00 00 00",
   address = "City, France",
   linkedin = "linkedin.com/in/your-profile",
   github = "github.com/your-profile",
@@ -64,7 +63,6 @@ const CV = ({
         lastname={lastname}
         title={title}
         email={email}
-        phone={phone}
         address={address}
         linkedin={linkedin}
         github={github}
